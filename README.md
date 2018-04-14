@@ -16,40 +16,27 @@ Documentation is at [docs/guide/README.md](docs/guide/README.md).
 [![Total Downloads](https://poser.pugx.org/yiisoft/yii2-app-advanced/downloads.png)](https://packagist.org/packages/yiisoft/yii2-app-advanced)
 [![Build Status](https://travis-ci.org/yiisoft/yii2-app-advanced.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-app-advanced)
 
-DIRECTORY STRUCTURE
+swoole安装和使用文档
 -------------------
 
 ```
-common
-    config/              contains shared configurations
-    mail/                contains view files for e-mails
-    models/              contains model classes used in both backend and frontend
-console
-    config/              contains console configurations
-    controllers/         contains console controllers (commands)
-    migrations/          contains database migrations
-    models/              contains console-specific model classes
-    runtime/             contains files generated during runtime
-backend
-    assets/              contains application assets such as JavaScript and CSS
-    config/              contains backend configurations
-    controllers/         contains Web controller classes
-    models/              contains backend-specific model classes
-    runtime/             contains files generated during runtime
-    views/               contains view files for the Web application
-    web/                 contains the entry script and Web resources
-frontend
-    assets/              contains application assets such as JavaScript and CSS
-    config/              contains frontend configurations
-    controllers/         contains Web controller classes
-    models/              contains frontend-specific model classes
-    runtime/             contains files generated during runtime
-    views/               contains view files for the Web application
-    web/                 contains the entry script and Web resources
-    widgets/             contains frontend widgets
-vendor/                  contains dependent 3rd-party packages
-environments/            contains environment-based overrides
-tests                    contains various tests for the advanced application
-    codeception/         contains tests developed with Codeception PHP Testing Framework
+注：php版本7.0             swoole版本：1.9
+
+1、下载解压：
+wget https://github.com/swoole/swoole-src/archive/v1.9.22.zip
+   unzip v1.9.22.zip
+2、安装
+    1、进入解压swoole目录
+  2、执行：phpize
+          ./configure --with-php-config=/usr/local/php/bin/php-config
+                   make
+          sudo make install
+ 
+3、杀掉swoole服务
+kill -9 $(ps aux|grep swoole/start|grep -v grep|awk '{print $2}')
+kill -9 $(ps aux|grep phpworker|grep -v grep|awk '{print $2}')
 ```
+4、启动swoole：
+php /自己的目录/advanced/yii swoole/start
+
 # yii
