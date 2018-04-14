@@ -35,8 +35,9 @@ wget https://github.com/swoole/swoole-src/archive/v1.9.22.zip
 3、杀掉swoole服务
 kill -9 $(ps aux|grep swoole/start|grep -v grep|awk '{print $2}')
 kill -9 $(ps aux|grep phpworker|grep -v grep|awk '{print $2}')
-```
+
 4、启动swoole：
 php /自己的目录/advanced/yii swoole/start
+```
 
 # yii
